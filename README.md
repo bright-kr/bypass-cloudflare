@@ -1,6 +1,6 @@
 # Cloudflare 우회: 모범 사례
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/) 
+[![Promo](https://github.com/bright-kr/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/) 
 
 이 가이드는 Cloudflare의 보안을 우회하고 차단되지 않으면서 웹사이트를 성공적으로 スクレイピング하는 방법을 설명합니다.
 
@@ -128,7 +128,7 @@ driver = uc.Chrome(
 
 ### Using Cloudflare Solvers
 
-전용 [Cloudflare solver services](https://github.com/luminati-io/cloudflare-captcha-solver)는 기본 보호를 일시적으로 우회할 수 있습니다. 예를 들어 cloudscraper는 JavaScript 엔진을 사용해 브라우저 지원을 시뮬레이션하지만, 업데이트가 오래되어 효과가 떨어질 수 있습니다.
+전용 [Cloudflare solver services](https://github.com/bright-kr/cloudflare-captcha-solver)는 기본 보호를 일시적으로 우회할 수 있습니다. 예를 들어 cloudscraper는 JavaScript 엔진을 사용해 브라우저 지원을 시뮬레이션하지만, 업데이트가 오래되어 효과가 떨어질 수 있습니다.
 
 ### Advanced Techniques
 
@@ -136,7 +136,7 @@ Cloudflare는 여러 봇 탐지 방법을 사용하므로, 단일 기법만으�
 
 ## Incorporating Bright Data Solutions
 
-[Bright Data’s Web Unlocker](https://github.com/luminati-io/web-unlocker-api)는 AI를 사용해 アンチボット 조치(예: ブラウザフィンガープリント, CAPTCHA 해결, IPローテーティング, リクエスト リトライ)를 극복함으로써 Cloudflare의 봇 탐지 우회를 단순화하며 99.99%의 성공률을 제공합니다. 최적의 プロキ시를 자동으로 선택하고 간단한 자격 증명을 제공하여, 표준 プロキ시 서버처럼 사용할 수 있습니다. 다른 プロキ시 서버와 동일하게 사용할 수 있습니다.
+[Bright Data’s Web Unlocker](https://github.com/bright-kr/web-unlocker-api)는 AI를 사용해 アンチボット 조치(예: ブラウザフィンガープリント, CAPTCHA 해결, IPローテーティング, リクエスト リトライ)를 극복함으로써 Cloudflare의 봇 탐지 우회를 단순화하며 99.99%의 성공률을 제공합니다. 최적의 プロキ시를 자동으로 선택하고 간단한 자격 증명을 제공하여, 표준 プロキ시 서버처럼 사용할 수 있습니다. 다른 プロキ시 서버와 동일하게 사용할 수 있습니다.
 
 ```python
 import requests
@@ -161,7 +161,7 @@ response = requests.get(url, proxies=proxies)
 print(response.json())
 ```
 
-[Bright Data's Scraping Browser](https://github.com/luminati-io/scraping-browser)는 여러 プロキ시를 사용해 사이트를 언락하는 원격 브라우저에서 코드를 실행함으로써 Cloudflare를 우회합니다. [Puppeteer](https://brightdata.co.kr/products/scraping-browser/puppeteer), [Selenium](https://brightdata.co.kr/products/scraping-browser/selenium), [Playwright](https://brightdata.co.kr/products/scraping-browser/playwright)와 통합되며, 완전한 헤드리스 경험을 제공합니다.
+[Bright Data's Scraping Browser](https://github.com/bright-kr/scraping-browser)는 여러 プロキ시를 사용해 사이트를 언락하는 원격 브라우저에서 코드를 실행함으로써 Cloudflare를 우회합니다. [Puppeteer](https://brightdata.co.kr/products/scraping-browser/puppeteer), [Selenium](https://brightdata.co.kr/products/scraping-browser/selenium), [Playwright](https://brightdata.co.kr/products/scraping-browser/playwright)와 통합되며, 완전한 헤드리스 경험을 제공합니다.
 
 ## Conclusion
 
