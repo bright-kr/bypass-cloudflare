@@ -2,7 +2,7 @@
 
 [![Promo](https://github.com/bright-kr/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/) 
 
-이 가이드는 Cloudflare의 보안을 우회하고 차단되지 않으면서 웹사이트를 성공적으로 スクレイピング하는 방법을 설명합니다.
+이 가이드는 Cloudflare의 보안을 우회하고 차단되지 않으면서 웹사이트를 성공적으로 스크레이핑하는 방법을 설명합니다.
 
 - [프로キ시 솔루션 사용](#using-proxy-solutions)
 - [HTTP 헤ッダー 스푸핑](#spoofing-http-headers)
@@ -20,7 +20,7 @@ Cloudflare의 [web application firewall](https://www.cloudflare.com/application-
 - **[HTTP/2 fingerprints](https://www.blackhat.com/docs/eu-17/materials/eu-17-Shuster-Passive-Fingerprinting-Of-HTTP2-Clients-wp.pdf)**: HTTP/2 파라メータ를 사용하여 알려진 봇 시그니처와 매칭합니다.
 - **HTTP 세부 정보**: 봇과 유사한 구성 여부를 확인하기 위해 헤ッダー와 Cookie를 검사합니다.
 - **JavaScript fingerprints**: 브라우저, OS, 하드웨어 세부 정보를 수집하여 봇을 구분합니다.
-- **행동 분석**: 머신러닝으로 リクエスト 속도, 마우스 움직임, 유휴 시간 등을 모니터링하여 봇을 탐지합니다.
+- **행동 분석**: 머신러닝으로 요청 속도, 마우스 움직임, 유휴 시간 등을 모니터링하여 봇을 탐지합니다.
 
 봇과 유사한 활동이 감지되면 Cloudflare는 백그라운드 JavaScript 챌린지를 발급하며, 실패 시 CAPTCHA로 이어집니다.
 
@@ -30,7 +30,7 @@ Cloudflare의 독자적인 봇 탐지는 완벽하지 않으므로, 요구 사�
 
 ### Using Proxy Solutions
 
-Cloudflare는 단일 IPアドレス에서 너무 많은 리クエスト가 발생하면 봇으로 플래그를 지정하여 탐지합니다. 이를 피하려면 [프리미엄 レジデンシャルプロキシ](https://brightdata.co.kr/proxy-types/residential-proxies)를 사용하십시오. 다만 user-agent 검사가 적용되는 경우 user agent를 스푸핑해야 합니다.
+Cloudflare는 단일 IP 주소에서 너무 많은 리クエスト가 발생하면 봇으로 플래그를 지정하여 탐지합니다. 이를 피하려면 [프리미엄 レジデンシャル프록시](https://brightdata.co.kr/proxy-types/residential-proxies)를 사용하십시오. 다만 user-agent 검사가 적용되는 경우 user agent를 스푸핑해야 합니다.
 
 ### Spoofing HTTP Headers
 
@@ -132,11 +132,11 @@ driver = uc.Chrome(
 
 ### Advanced Techniques
 
-Cloudflare는 여러 봇 탐지 방법을 사용하므로, 단일 기법만으로는 충분하지 않습니다. 대신 실제 사용자를 모방하기 위해 접근 방식을 결합하십시오. 예를 들어 강화된 헤드리스 브라우저를 사용하고, 사람의 마우스 움직임(예: [B-spline curves](https://stackoverflow.com/a/48690652))을 시뮬레이션하며, IP 차단을 피하기 위해 レジデンシャルプロキシ를 ローテーティング하고, [Hazetunnel](https://github.com/daijro/hazetunnel) 같은 도구로 진짜 브라우저 ブラウザフィンガープリント를 재현하십시오. CAPTCHA solver를 추가하면 Cloudflare 방어를 우회할 가능성이 더욱 높아집니다.
+Cloudflare는 여러 봇 탐지 방법을 사용하므로, 단일 기법만으로는 충분하지 않습니다. 대신 실제 사용자를 모방하기 위해 접근 방식을 결합하십시오. 예를 들어 강화된 헤드리스 브라우저를 사용하고, 사람의 마우스 움직임(예: [B-spline curves](https://stackoverflow.com/a/48690652))을 시뮬레이션하며, IP 차단을 피하기 위해 レジデンシャル프록시를 ローテーティング하고, [Hazetunnel](https://github.com/daijro/hazetunnel) 같은 도구로 진짜 브라우저 브라우저 핑거프린트를 재현하십시오. CAPTCHA solver를 추가하면 Cloudflare 방어를 우회할 가능성이 더욱 높아집니다.
 
 ## Incorporating Bright Data Solutions
 
-[Bright Data’s Web Unlocker](https://github.com/bright-kr/web-unlocker-api)는 AI를 사용해 アンチボット 조치(예: ブラウザフィンガープリント, CAPTCHA 해결, IPローテーティング, リクエスト リトライ)를 극복함으로써 Cloudflare의 봇 탐지 우회를 단순화하며 99.99%의 성공률을 제공합니다. 최적의 プロキ시를 자동으로 선택하고 간단한 자격 증명을 제공하여, 표준 プロキ시 서버처럼 사용할 수 있습니다. 다른 プロキ시 서버와 동일하게 사용할 수 있습니다.
+[Bright Data’s Web Unlocker](https://github.com/bright-kr/web-unlocker-api)는 AI를 사용해 안티봇 조치(예: 브라우저 핑거프린트, CAPTCHA 해결, IPローテーティング, 요청 재시도)를 극복함으로써 Cloudflare의 봇 탐지 우회를 단순화하며 99.99%의 성공률을 제공합니다. 최적의 プロキ시를 자동으로 선택하고 간단한 자격 증명을 제공하여, 표준 プロキ시 서버처럼 사용할 수 있습니다. 다른 プロキ시 서버와 동일하게 사용할 수 있습니다.
 
 ```python
 import requests
